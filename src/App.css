@@ -1,0 +1,878 @@
+/* ========================================
+   MONTE SEU PC - NEXTAGE
+   ======================================== */
+
+.pagina-montar-pc {
+  min-height: 70vh;
+  padding: 50px 0 80px;
+  background: #080b0f;
+  color: #ffffff;
+}
+
+.montar-pc-container {
+  width: min(1100px, 92%);
+  margin: 0 auto;
+}
+
+.montar-pc-container > h1 {
+  margin: 0 0 10px;
+  font-size: 36px;
+  font-weight: 800;
+}
+
+.montar-pc-container > p {
+  margin-bottom: 35px;
+  color: #aeb6c0;
+}
+
+
+/* LISTA DE COMPONENTES */
+
+.montador-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+
+/* CADA CATEGORIA */
+
+.montador-categoria {
+  padding: 22px;
+
+  background: #0c1015;
+
+  border: 1px solid #202832;
+  border-radius: 10px;
+
+  transition:
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.montador-categoria:hover {
+  border-color: #343e49;
+  transform: translateY(-1px);
+}
+
+.montador-categoria h2 {
+  margin: 0 0 15px;
+
+  font-size: 18px;
+  font-weight: 800;
+
+  color: #ffffff;
+}
+
+.montador-categoria p {
+  margin: 0;
+
+  font-size: 14px;
+
+  color: #7f8994;
+}
+
+
+/* SELECT DOS PRODUTOS */
+
+.montador-categoria select {
+  width: 100%;
+
+  padding: 13px 15px;
+
+  color: #ffffff;
+  background: #090d12;
+
+  border: 1px solid #29313b;
+  border-radius: 6px;
+
+  font-family: inherit;
+  font-size: 14px;
+
+  outline: none;
+  cursor: pointer;
+
+  transition: border-color 0.2s ease;
+}
+
+.montador-categoria select:focus {
+  border-color: #e63232;
+}
+
+
+/* PRODUTO SELECIONADO */
+
+.peca-selecionada {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-top: 15px;
+  padding: 13px 15px;
+
+  background: #111820;
+
+  border-left: 3px solid #e63232;
+  border-radius: 5px;
+}
+
+.peca-selecionada strong {
+  color: #ffffff;
+}
+
+.peca-selecionada span {
+  color: #e63232;
+  font-weight: 800;
+}
+
+
+/* TOTAL */
+
+.montador-total {
+  display: flex;
+  justify-content: flex-end;
+
+  margin-top: 25px;
+  padding: 25px;
+
+  background: #0c1015;
+
+  border: 1px solid #202832;
+  border-radius: 10px;
+}
+
+.montador-total h2 {
+  margin: 0;
+
+  font-size: 25px;
+  color: #ffffff;
+}
+
+.montador-total h2::first-letter {
+  color: #e63232;
+}
+
+
+/* RESPONSIVO */
+
+@media (max-width: 768px) {
+
+  .pagina-montar-pc {
+    padding-top: 30px;
+  }
+
+  .montar-pc-container {
+    width: 94%;
+  }
+
+  .montar-pc-container > h1 {
+    font-size: 28px;
+  }
+
+  .peca-selecionada {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 7px;
+  }
+
+  .montador-total {
+    justify-content: flex-start;
+  }
+
+}
+/* ========================================
+   BOTÃO DA MONTAGEM
+   ======================================== */
+
+.montador-total {
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+}
+
+.montador-total > div p {
+  margin: 0 0 6px;
+
+  color: #8d98a5;
+
+  font-size: 13px;
+}
+
+.btn-adicionar-montagem {
+  padding: 14px 22px;
+
+  color: #ffffff;
+  background: #e63232;
+
+  border: none;
+  border-radius: 6px;
+
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 800;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.btn-adicionar-montagem:hover {
+  background: #f03a3a;
+  transform: translateY(-1px);
+}
+
+.btn-adicionar-montagem:disabled {
+  background: #343a40;
+  color: #7f8994;
+
+  cursor: not-allowed;
+
+  opacity: 0.7;
+  transform: none;
+}
+
+@media (max-width: 768px) {
+
+  .montador-total {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn-adicionar-montagem {
+    width: 100%;
+  }
+
+}
+/* ========================================
+   ÁREA ADMINISTRATIVA - NEXTAGE
+   ======================================== */
+
+.gerenciar-produtos {
+  width: min(1200px, 94%);
+  margin: 40px auto 70px;
+  padding: 35px;
+
+  background: #0c1015;
+  color: #ffffff;
+
+  border: 1px solid #202832;
+  border-radius: 12px;
+}
+
+.gerenciar-produtos > h1 {
+  margin: 0 0 30px;
+
+  font-size: 32px;
+  font-weight: 800;
+
+  color: #ffffff;
+}
+
+.gerenciar-produtos > h1::after {
+  content: "";
+  display: block;
+
+  width: 55px;
+  height: 4px;
+
+  margin-top: 10px;
+
+  background: #e63232;
+  border-radius: 4px;
+}
+
+
+/* ========================================
+   FORMULÁRIO DO ADMIN
+   ======================================== */
+
+.form-produto {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 20px;
+
+  padding: 25px;
+
+  background: #090d12;
+
+  border: 1px solid #202832;
+  border-radius: 10px;
+}
+
+.form-produto .form-label {
+  margin-top: 5px;
+
+  color: #aeb6c0;
+
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.form-produto .form-control {
+  width: 100%;
+
+  padding: 12px 14px;
+
+  color: #ffffff;
+  background: #111820;
+
+  border: 1px solid #29313b;
+  border-radius: 6px;
+
+  font-family: inherit;
+  font-size: 14px;
+
+  outline: none;
+  box-sizing: border-box;
+
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+.form-produto .form-control:focus {
+  border-color: #e63232;
+  background: #0d131a;
+}
+
+.form-produto textarea.form-control {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.form-produto select.form-control {
+  cursor: pointer;
+}
+
+.form-produto input[type="file"] {
+  cursor: pointer;
+}
+
+
+/* ========================================
+   BOTÕES DO ADMIN
+   ======================================== */
+
+.form-produto .mt-3 {
+  grid-column: 1 / -1;
+
+  display: flex;
+  gap: 10px;
+
+  margin-top: 15px;
+}
+
+.gerenciar-produtos .btn {
+  padding: 10px 18px;
+
+  border: none;
+  border-radius: 6px;
+
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.gerenciar-produtos .btn:hover {
+  transform: translateY(-1px);
+  opacity: 0.9;
+}
+
+.gerenciar-produtos .btn-primary {
+  color: #ffffff;
+  background: #e63232;
+}
+
+.gerenciar-produtos .btn-secondary {
+  color: #ffffff;
+  background: #49515a;
+}
+
+.gerenciar-produtos .btn-warning {
+  color: #111111;
+  background: #f0b429;
+}
+
+.gerenciar-produtos .btn-danger {
+  color: #ffffff;
+  background: #c62828;
+}
+
+.gerenciar-produtos .btn-sm {
+  padding: 8px 12px;
+  font-size: 13px;
+}
+
+
+/* ========================================
+   SEPARADOR
+   ======================================== */
+
+.gerenciar-produtos hr {
+  margin: 35px 0;
+
+  border: none;
+  border-top: 1px solid #202832;
+}
+
+
+/* ========================================
+   TABELA DE PRODUTOS
+   ======================================== */
+
+.tabela-produtos {
+  width: 100%;
+  overflow-x: auto;
+
+  border: 1px solid #202832;
+  border-radius: 10px;
+}
+
+.gerenciar-produtos table {
+  width: 100%;
+  border-collapse: collapse;
+
+  background: #090d12;
+  color: #ffffff;
+}
+
+.gerenciar-produtos thead {
+  background: #111820;
+}
+
+.gerenciar-produtos th {
+  padding: 15px 12px;
+
+  color: #ffffff;
+
+  font-size: 13px;
+  font-weight: 800;
+
+  text-align: left;
+  white-space: nowrap;
+
+  border-bottom: 2px solid #e63232;
+}
+
+.gerenciar-produtos td {
+  padding: 14px 12px;
+
+  color: #c5cbd2;
+
+  font-size: 14px;
+
+  border-bottom: 1px solid #202832;
+
+  vertical-align: middle;
+}
+
+.gerenciar-produtos tbody tr {
+  transition: background 0.2s ease;
+}
+
+.gerenciar-produtos tbody tr:hover {
+  background: #111820;
+}
+
+.gerenciar-produtos tbody tr:last-child td {
+  border-bottom: none;
+}
+
+
+/* ========================================
+   IMAGEM DO PRODUTO NA TABELA
+   ======================================== */
+
+.gerenciar-produtos td img {
+  width: 70px;
+  height: 70px;
+
+  object-fit: contain;
+
+  padding: 5px;
+
+  background: #ffffff;
+
+  border-radius: 6px;
+}
+
+
+/* ========================================
+   RESPONSIVO - ADMIN
+   ======================================== */
+
+@media (max-width: 768px) {
+
+  .gerenciar-produtos {
+    width: 94%;
+
+    margin-top: 25px;
+    padding: 20px;
+
+    box-sizing: border-box;
+  }
+
+  .gerenciar-produtos > h1 {
+    font-size: 27px;
+  }
+
+  .form-produto {
+    grid-template-columns: 1fr;
+    padding: 18px;
+  }
+
+  .form-produto .mt-3 {
+    grid-column: 1;
+    flex-direction: column;
+  }
+
+  .gerenciar-produtos .btn {
+    width: 100%;
+  }
+
+  .gerenciar-produtos table {
+    min-width: 900px;
+  }
+
+}
+/* ========================================
+   PAGAMENTO - NEXTAGE
+   ======================================== */
+
+.menu-pagamento {
+  width: min(900px, 92%);
+  min-height: 70vh;
+
+  margin: 40px auto 70px;
+  padding: 35px;
+
+  color: #ffffff;
+  background: #0c1015;
+
+  border: 1px solid #202832;
+  border-radius: 12px;
+
+  box-sizing: border-box;
+}
+
+.menu-pagamento h1 {
+  margin-top: 0;
+  margin-bottom: 30px;
+
+  font-size: 32px;
+  font-weight: 800;
+}
+
+.menu-pagamento h1::after {
+  content: "";
+  display: block;
+
+  width: 55px;
+  height: 4px;
+
+  margin-top: 10px;
+
+  background: #e63232;
+  border-radius: 4px;
+}
+
+.menu-pagamento h2 {
+  margin-top: 25px;
+  color: #ffffff;
+}
+
+.menu-pagamento h3 {
+  margin-top: 30px;
+  color: #ffffff;
+}
+
+
+/* RESUMO */
+
+.resumo-pagamento {
+  overflow: hidden;
+
+  background: #090d12;
+
+  border: 1px solid #202832;
+  border-radius: 8px;
+}
+
+.produto-pagamento {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 20px;
+  padding: 15px 18px;
+
+  border-bottom: 1px solid #202832;
+}
+
+.produto-pagamento:last-child {
+  border-bottom: none;
+}
+
+.produto-pagamento p {
+  margin: 0;
+  color: #aeb6c0;
+}
+
+.produto-pagamento strong {
+  color: #ffffff;
+}
+
+
+/* FORMAS DE PAGAMENTO */
+
+.formas-pagamento {
+  display: flex;
+  gap: 12px;
+
+  margin: 20px 0;
+}
+
+.formas-pagamento button {
+  flex: 1;
+
+  padding: 14px;
+
+  color: #ffffff;
+  background: #111820;
+
+  border: 1px solid #29313b;
+  border-radius: 7px;
+
+  font-family: inherit;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.formas-pagamento button:hover {
+  border-color: #e63232;
+  transform: translateY(-1px);
+}
+
+.formas-pagamento .pagamento-selecionado {
+  background: #e63232;
+  border-color: #e63232;
+}
+
+
+/* DETALHES DO PAGAMENTO */
+
+.detalhes-pagamento {
+  margin-top: 25px;
+  padding: 25px;
+
+  text-align: center;
+
+  background: #090d12;
+
+  border: 1px solid #202832;
+  border-radius: 10px;
+}
+
+.detalhes-pagamento h3 {
+  margin-top: 0;
+  color: #ffffff;
+}
+
+.detalhes-pagamento p {
+  color: #aeb6c0;
+}
+
+.detalhes-pagamento small {
+  display: block;
+
+  margin-top: 15px;
+
+  color: #707b86;
+}
+
+
+/* PIX */
+
+.pix-qrcode {
+  display: flex;
+  justify-content: center;
+
+  margin: 25px 0;
+}
+
+.pix-qrcode img {
+  width: 220px;
+  height: 220px;
+
+  padding: 12px;
+
+  object-fit: contain;
+
+  background: #ffffff;
+
+  border-radius: 10px;
+}
+
+.pix-titulo {
+  margin-bottom: 10px;
+}
+
+.chave-pix {
+  display: inline-block;
+
+  padding: 12px 20px;
+
+  color: #ffffff;
+  background: #111820;
+
+  border: 1px solid #29313b;
+  border-radius: 6px;
+
+  font-weight: 700;
+}
+
+
+/* CARTÃO */
+
+.form-cartao {
+  max-width: 550px;
+
+  margin: 20px auto 0;
+
+  text-align: left;
+}
+
+.form-cartao label {
+  display: block;
+
+  margin: 15px 0 7px;
+
+  color: #aeb6c0;
+
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.form-cartao input {
+  width: 100%;
+
+  padding: 13px 14px;
+
+  color: #ffffff;
+  background: #111820;
+
+  border: 1px solid #29313b;
+  border-radius: 6px;
+
+  font-family: inherit;
+  font-size: 14px;
+
+  outline: none;
+  box-sizing: border-box;
+}
+
+.form-cartao input:focus {
+  border-color: #e63232;
+}
+
+.cartao-linha {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  gap: 15px;
+}
+
+
+/* FORMA SELECIONADA */
+
+.forma-selecionada {
+  margin-top: 25px;
+
+  color: #aeb6c0;
+}
+
+.forma-selecionada strong {
+  color: #e63232;
+}
+
+
+/* CONFIRMAR COMPRA */
+
+.btn-confirmar-compra {
+  width: 100%;
+
+  margin-top: 15px;
+  padding: 15px;
+
+  color: #ffffff;
+  background: #e63232;
+
+  border: none;
+  border-radius: 7px;
+
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 800;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.btn-confirmar-compra:hover:not(:disabled) {
+  background: #f03a3a;
+  transform: translateY(-1px);
+}
+
+.btn-confirmar-compra:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+
+/* RESPONSIVO */
+
+@media (max-width: 768px) {
+
+  .menu-pagamento {
+    width: 94%;
+    padding: 20px;
+  }
+
+  .formas-pagamento {
+    flex-direction: column;
+  }
+
+  .produto-pagamento {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .cartao-linha {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .pix-qrcode img {
+    width: 180px;
+    height: 180px;
+  }
+
+}
